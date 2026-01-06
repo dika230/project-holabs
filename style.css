@@ -1,0 +1,834 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('gambar/hero.png'); /* Gambar pantai */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Memberikan efek gelap tipis */
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.logo img { margin-right: 10px; }
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 30px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: #ff0000;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    height: 80vh;
+    z-index: 5;
+}
+
+.hero-content {
+    max-width: 550px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.highlight-red { color: #e60000; }
+
+.script-font {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #e60000;
+    margin-top: -10px;
+}
+
+.white-text { color: white; font-family: 'Poppins', sans-serif; font-size: 3rem; }
+
+.description {
+    margin: 20px 0 30px;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    color: white !important;
+}
+
+.description2 {
+    margin: 20px 0 30px;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    
+}
+
+.btn-explore {
+    display: inline-block;
+    background: #c20000;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-explore:hover { background: #ff0000; transform: scale(1.05); }
+
+/* Bagian Gambar Bertumpuk */
+.hero-images {
+    position: relative;
+    width: 450px;
+    height: 450px;
+}
+
+.card {
+    position: absolute;
+    border: 5px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card img { width: 100%; height: 100%; object-fit: cover; }
+
+.card-1 { width: 250px; height: 300px; top: 0; left: 0; z-index: 1; }
+.card-2 { width: 200px; height: 250px; top: 150px; right: 0; z-index: 2; }
+.card-3 { width: 220px; height: 280px; bottom: -50px; left: 80px; z-index: 3; }
+
+.floating-badge {
+    position: absolute;
+    top: 40px;
+    right: -20px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 4;
+}
+
+
+/* Pastikan font sudah terpasang di <head> HTML Anda */
+body {
+    background-color: #ffffff;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-section {
+    padding: 100px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+}
+
+/* --- Bagian Gambar --- */
+.image-grid {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+/* Efek Dot Pattern di Background */
+.dot-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ccc 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    top: -20px;
+    left: -20px;
+    z-index: 0;
+}
+
+.img-box {
+    position: absolute;
+    border: 6px solid #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: #fff;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Posisi masing-masing gambar agar bertumpuk */
+.img-top {
+    width: 180px; height: 240px;
+    top: 0; left: 50px; z-index: 2;
+}
+
+.img-middle {
+    width: 180px; height: 180px;
+    top: 150px; left: 140px; z-index: 1;
+}
+
+.img-left {
+    width: 180px; height: 240px;
+    top: 220px; left: 0px; z-index: 3;
+}
+
+.img-bottom {
+    width: 180px; height: 240px;
+    top: 320px; left: 210px; z-index: 4;
+}
+
+/* --- Bagian Teks --- */
+.about-content {
+    flex: 1;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-family: 'Serif', Georgia, 'Times New Roman'; /* Menggunakan serif agar mirip gambar */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.main-title span {
+    color: #c20000; /* Warna merah sesuai gambar */
+}
+
+.description {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .image-grid {
+        transform: scale(0.8); /* Mengecilkan galeri di HP */
+        margin-bottom: 50px;
+    }
+    .description {
+        margin: 0 auto;
+    }
+}
+
+
+
+
+.destinations {
+    padding: 60px 8%;
+    text-align: left;
+}
+
+.destinations1{
+       padding: 60px 8%;
+    text-align: right;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0;
+}
+
+.brand-subtitle {
+    font-size: 2.5rem;
+    margin-top: -5px;
+}
+
+.brand-subtitle i {
+    font-family: 'Dancing Script', cursive; /* Menggunakan font latin */
+    font-weight: 400;
+    color: #333;
+}
+
+.brand-subtitle span {
+    color: #c20000;
+    font-weight: 700;
+}
+
+/* Grid Layout 4 Kolom */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.tour-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    background: #fff;
+    height: 500px; /* Tinggi card agar seragam */
+}
+
+.tour-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bagian Info Putih di Bawah Card */
+.card-info {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    right: 10px;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.location {
+    font-size: 0.7rem;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.rating {
+    color: #333;
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    margin: 5px 0 10px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: capitalize;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.btn-detail {
+    background: #c20000;
+    color: white;
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Responsivitas untuk Tablet dan HP */
+@media (max-width: 1024px) {
+    .card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .section-header h2 { font-size: 1.8rem; }
+}
+
+
+.floating-badge img { width: 40px; margin-right: 10px; border-radius: 5px; }
+.floating-badge strong { font-size: 0.8rem; display: block; }
+.floating-badge p { font-size: 0.6rem; color: #777; }
+
+.testimonials {
+    padding: 80px 8%;
+    background-color: #fff;
+    position: relative;
+}
+
+/* Judul Background Testimonials */
+.testi-bg-title {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 40px;
+    font-family: 'Serif', Georgia;
+}
+
+.testi-bg-title span {
+    color: #c20000;
+}
+
+/* Header Section */
+.testi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.header-left .red-tag {
+    color: #c20000;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.header-left h2 {
+    font-size: 2.5rem;
+    max-width: 300px;
+    line-height: 1.2;
+}
+
+.header-right {
+    max-width: 400px;
+}
+
+.header-right p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header-right .line {
+    width: 80px;
+    height: 3px;
+    background: #333;
+}
+
+/* Grid Testimonial */
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testi-card {
+    background: #000; /* Warna hitam sesuai gambar */
+    color: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.testi-card:hover {
+    transform: translateY(-10px);
+}
+
+.stars {
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.comment {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    min-height: 80px;
+}
+
+/* Profil User di dalam Card */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.user-info span {
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-bg-title { font-size: 3.5rem; }
+}
+
+@media (max-width: 600px) {
+    .testi-grid { grid-template-columns: 1fr; }
+    .testi-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+
+.why-us {
+    position: relative;
+    padding: 100px 8%;
+    background: url('gambar/unsplash_AxT4iYcoI2M.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+}
+
+/* Overlay gelap agar teks terbaca jelas */
+.why-us-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.why-us-container {
+    position: relative;
+    z-index: 2;
+}
+
+.why-us-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.why-us-header h2 span { color: #b21212; }
+
+.why-us-header p {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Grid Layout untuk Fitur */
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    text-align: left;
+}
+
+.feature-column {
+    flex: 1;
+}
+
+/* Mengatur posisi kolom kanan agar turun sedikit (zig-zag) */
+.right-side {
+    margin-top: 80px;
+}
+
+.feature-item {
+    margin-bottom: 50px;
+}
+
+.feature-item h3 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.feature-item h3 span {
+    color: #b80e0e;
+    display: block; /* Membuat teks merah berada di baris baru */
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #eee;
+    max-width: 400px;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .features-grid {
+        flex-direction: column;
+        gap: 0;
+    }
+    .right-side {
+        margin-top: 0;
+    }
+    .feature-item {
+        text-align: center;
+    }
+    .feature-item p {
+        margin: 0 auto;
+    }
+}
+
+.things-to-do {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.things-to-do .section-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.things-to-do .section-header h1 span {
+    color: #b90a0a;
+}
+
+.things-to-do .section-header p {
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 50px;
+}
+
+/* Container Grid */
+.todo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.todo-card {
+    width: 300px; /* Lebar kartu */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.todo-card:hover {
+    transform: translateY(-5px);
+}
+
+.todo-image {
+    width: 100%;
+    height: 200px;
+}
+
+.todo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.todo-title {
+    padding: 20px;
+    background: #fff;
+}
+
+.todo-title h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-family: 'Serif', Georgia; /* Menyesuaikan gaya font di gambar */
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .todo-card {
+        width: 100%; /* Kartu melebar penuh di layar HP */
+    }
+}
+
+.main-footer {
+    background-color: #a30000; /* Warna merah gelap sesuai gambar */
+    color: white;
+    padding: 60px 8% 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr; /* Kolom pertama lebih lebar */
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Styling Kolom Branding */
+.branding .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.branding p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* Styling Navigasi */
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Styling Kontak */
+.contact-item {
+    margin-bottom: 15px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.contact-item p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Ikon Sosial & Review */
+.social-icons, .review-logos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+}
+
+.review-logos img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background: white; /* Memberi dasar putih jika logo transparan */
+    padding: 5px;
+}
+
+/* Copyright Bar */
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #800000; /* Warna merah lebih gelap untuk bar bawah */
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .branding .footer-logo, .social-icons, .review-logos {
+        justify-content: center;
+    }
+}
